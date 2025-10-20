@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Device Repair Ticket</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.4/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 text-gray-900">
+<div class="max-w-2xl mx-auto mt-10 p-8 bg-white rounded-2xl shadow">
+    <h1 class="text-2xl font-bold mb-6 text-center">Device Repair Request</h1>
+
+    <form method="POST" class="space-y-4">
+        <div>
+            <label class="block font-semibold">Your Name</label>
+            <input name="name" required class="w-full border rounded p-2" placeholder="John Doe">
+        </div>
+
+        <div>
+            <label class="block font-semibold">Your Email</label>
+            <input type="email" name="email" required class="w-full border rounded p-2" placeholder="john@example.com">
+        </div>
+
+        <div>
+            <label class="block font-semibold">Building</label>
+            <select name="building" required class="w-full border rounded p-2">
+                <option value="">Select your building</option>
+                <option value="High School">High School</option>
+                <option value="Middle School">Middle School</option>
+                <option value="Upper Elementary">Upper Elementary</option>
+                <option value="Lower Elementary">Lower Elementary</option>
+                <option value="Administration">Administration</option>
+            </select>
+        </div>
+
+        <div>
+            <label class="block font-semibold">Device Asset Tag</label>
+            <input name="asset_tag" required class="w-full border rounded p-2" placeholder="OP001234">
+        </div>
+
+        <div>
+            <label class="block font-semibold">Loaner Asset Tag (if given)</label>
+            <input name="loaner_tag" class="w-full border rounded p-2" placeholder="OP009876">
+        </div>
+
+        <div>
+            <label class="block font-semibold">Describe the Problem</label>
+            <textarea name="problem" required class="w-full border rounded p-2" rows="4" placeholder="Describe what is wrong with the device..."></textarea>
+        </div>
+
+        <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700">
+            Submit Ticket
+        </button>
+    </form>
+</div>
+</body>
+</html>
