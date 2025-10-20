@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Repair Ticket #{{ ticket[0] }}</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.4/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 text-gray-900">
+<div class="max-w-lg mx-auto mt-10 p-8 bg-white rounded-2xl shadow">
+    <h1 class="text-xl font-bold mb-4 text-center">Repair Ticket #{{ ticket[0] }}</h1>
+
+    <div class="space-y-2">
+        <p><strong>Name:</strong> {{ ticket[1] }}</p>
+        <p><strong>Email:</strong> {{ ticket[2] }}</p>
+        <p><strong>Building:</strong> {{ ticket[5] }}</p>
+        <p><strong>Device Asset Tag:</strong> {{ ticket[3] }}</p>
+        <p><strong>Loaner Asset Tag:</strong> {{ ticket[4] or 'None' }}</p>
+        <p><strong>Problem:</strong> {{ ticket[6] }}</p>
+    </div>
+
+    <div class="mt-6 text-center">
+        <button onclick="window.print()" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">
+            Print Ticket
+        </button>
+    </div>
+</div>
+</body>
+</html>
