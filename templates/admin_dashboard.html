@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.4/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 text-gray-900">
+<div class="max-w-5xl mx-auto mt-10 bg-white p-6 rounded-2xl shadow">
+  <div class="flex justify-between items-center mb-6">
+    <h1 class="text-2xl font-bold">Submitted Tickets</h1>
+    <div>
+      <a href="{{ url_for('export_tickets') }}" class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 mr-2">Export CSV</a>
+      <a href="{{ url_for('admin_logout') }}" class="bg-gray-600 text-white px-4 py-2 rounded-lg hover:bg-gray-700">Logout</a>
+    </div>
+  </div>
+
+  <table class="w-full border-collapse border text-sm">
+    <thead>
+      <tr class="bg-gray-200">
+        <th class="border p-2">ID</th>
+        <th class="border p-2">Name</th>
+        <th class="border p-2">Email</th>
+        <th class="border p-2">Building</th>
+        <th class="border p-2">Asset Tag</th>
+        <th class="border p-2">Loaner</th>
+        <th class="border p-2">Problem</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for t in tickets %}
+        <tr class="hover:bg-gray-100">
+          <td class="border p-2">{{ t[0] }}</td>
+          <td class="border p-2">{{ t[1] }}</td>
+          <td class="border p-2">{{ t[2] }}</td>
+          <td class="border p-2">{{ t[5] }}</td>
+          <td class="border p-2">{{ t[3] }}</td>
+          <td class="border p-2">{{ t[4] or '—' }}</td>
+          <td class="border p-2">{{ t[6] }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+</body>
+</html>
